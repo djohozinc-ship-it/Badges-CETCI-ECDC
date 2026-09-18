@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil professionnel</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --navy:#0E2A30;
+    --navy-deep:#081A1F;
+    --teal:#1E9C8B;
+    --teal-soft:#DCEFEA;
+    --paper:#F6F4EF;
+    --ink:#16211F;
+    --muted:#5C6B68;
+    --line:#DFE3DE;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    padding:32px 16px;
+    min-height:100vh;
+  }
+  .card{
+    width:100%;
+    max-width:400px;
+    background:var(--white);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 1px 2px rgba(8,26,31,.06), 0 12px 32px rgba(8,26,31,.10);
+    border:1px solid var(--line);
+  }
+
+  /* --- Header / bandeau identité --- */
+  .header{
+    position:relative;
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+    padding:28px 24px 64px;
+    color:var(--white);
+  }
+  .header::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(circle at 85% 15%, rgba(30,156,139,.35), transparent 55%);
+  }
+  .brand{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:rgba(255,255,255,.82);
+  }
+  .brand .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--teal);
+  }
+
+  .photo-wrap{
+    position:relative;
+    margin-top:22px;
+    display:flex;
+    align-items:flex-end;
+    gap:16px;
+  }
+  .photo{
+    width:76px;height:76px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#28584f,#0E2A30);
+    border:2px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:26px;font-weight:700;color:var(--white);
+    flex-shrink:0;
+  }
+  .id-text{padding-bottom:2px;}
+  .name{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:21px;font-weight:700;
+    line-height:1.15;
+    margin:0;
+  }
+  .role{
+    margin:4px 0 0;
+    font-size:13.5px;
+    color:rgba(255,255,255,.75);
+  }
+
+  /* --- Bandeau de statut chevauchant --- */
+  .status{
+    position:relative;
+    margin:-38px 20px 0;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px 16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 6px 16px rgba(8,26,31,.08);
+  }
+  .status .check{
+    width:20px;height:20px;border-radius:50%;
+    background:var(--teal-soft);
+    color:var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;
+    flex-shrink:0;
+  }
+  .status-text{font-size:12.5px;color:var(--muted);}
+  .status-text b{color:var(--ink);font-weight:600;}
+
+  /* --- Corps : informations --- */
+  .body{padding:26px 20px 20px;}
+  .section-label{
+    font-size:11.5px;
+    color:var(--muted);
+    margin:0 0 10px 2px;
+  }
+  .info-list{
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid var(--line);
+  }
+  .info-row{
+    display:flex;
+    gap:14px;
+    padding:13px 2px;
+    border-bottom:1px solid var(--line);
+    align-items:flex-start;
+  }
+  .info-icon{
+    width:34px;height:34px;
+    border-radius:9px;
+    background:var(--teal-soft);
+    color:var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    font-size:15px;
+  }
+  .info-main{display:flex;flex-direction:column;gap:1px;}
+  .info-label{font-size:11px;color:var(--muted);}
+  .info-value{font-size:14.5px;font-weight:500;color:var(--ink);}
+
+  /* --- Actions --- */
+  .actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:22px;
+  }
+  .btn{
+    border:none;
+    border-radius:12px;
+    padding:13px 10px;
+    font-family:'Inter',sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:7px;
+  }
+  .btn-primary{
+    background:var(--navy);
+    color:var(--white);
+    grid-column:span 2;
+  }
+  .btn-secondary{
+    background:var(--teal-soft);
+    color:var(--navy);
+  }
+
+  .footer{
+    text-align:center;
+    padding:18px 20px 24px;
+    font-size:11px;
+    color:var(--muted);
+  }
+  .footer a{color:var(--teal);text-decoration:none;}
+
+  @media (max-width:380px){
+    .name{font-size:19px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <div class="header">
+    <div class="brand"><span class="dot"></span>NOM DE L'ENTREPRISE</div>
+    <div class="photo-wrap">
+      <div class="photo" id="photo">CD</div>
+      <div class="id-text">
+        <p class="name" id="fullname">Cédric Djohozin</p>
+        <p class="role" id="jobtitle">Technicien biomédical</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="status">
+    <div class="check">✓</div>
+    <div class="status-text"><b>Profil vérifié</b> — identité confirmée par l'entreprise</div>
+  </div>
+
+  <div class="body">
+    <p class="section-label">Informations</p>
+    <div class="info-list">
+      <div class="info-row">
+        <div class="info-icon">🏢</div>
+        <div class="info-main">
+          <span class="info-label">Service</span>
+          <span class="info-value" id="service">Maintenance biomédicale</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div class="info-main">
+          <span class="info-label">Téléphone</span>
+          <span class="info-value" id="phone">+229 01 XX XX XX XX</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">✉️</div>
+        <div class="info-main">
+          <span class="info-label">Email</span>
+          <span class="info-value" id="email">c.djohozin@entreprise.com</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div class="info-main">
+          <span class="info-label">Localisation</span>
+          <span class="info-value" id="location">Cotonou, Bénin</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-secondary" onclick="callPhone()">📞 Appeler</button>
+      <button class="btn btn-secondary" onclick="mailPerson()">✉️ Email</button>
+      <button class="btn btn-primary" onclick="saveContact()">💾 Enregistrer le contact</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    Fiche générée par <a href="#">nom-entreprise.com</a>
+  </div>
+</div>
+
+<script>
+  // --- Chargement du membre à afficher ---
+  // Le QR code de chaque membre pointe vers :
+  //   https://entreprise.com/profil-badge.html?id=cedric-djohozin
+  // Cette page lit l'"id" dans l'URL, va chercher profils.json,
+  // et affiche uniquement le membre correspondant.
+
+  let profil = null;
+  const entreprise = "Nom de l'entreprise";
+
+  function initiales(nom){
+    return nom.split(" ").map(m => m[0]).join("").slice(0,2).toUpperCase();
+  }
+
+  async function chargerProfil(){
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    try{
+      const reponse = await fetch("profils.json");
+      const profils = await reponse.json();
+      profil = profils.find(p => p.id === id);
+
+      if(!profil){
+        afficherErreur("Profil introuvable. Vérifiez le lien du QR code.");
+        return;
+      }
+      afficherProfil(profil);
+    }catch(e){
+      afficherErreur("Impossible de charger les données. Vérifiez votre connexion.");
+    }
+  }
+
+  function afficherProfil(p){
+    const photoEl = document.getElementById("photo");
+    if(p.photo){
+      photoEl.innerHTML = "";
+      photoEl.style.backgroundImage = `url('${p.photo}')`;
+      photoEl.style.backgroundSize = "cover";
+      photoEl.style.backgroundPosition = "center";
+    }else{
+      photoEl.style.backgroundImage = "none";
+      photoEl.textContent = initiales(p.nom);
+    }
+    document.getElementById("fullname").textContent = p.nom;
+    document.getElementById("jobtitle").textContent = p.fonction;
+    document.getElementById("service").textContent = p.service;
+    document.getElementById("phone").textContent = p.telephoneAffiche;
+    document.getElementById("email").textContent = p.email;
+    document.getElementById("location").textContent = p.localisation;
+  }
+
+  function afficherErreur(message){
+    document.getElementById("card").innerHTML =
+      `<div style="padding:40px 24px;text-align:center;color:var(--muted);font-size:14px;">${message}</div>`;
+  }
+
+  chargerProfil();
+
+  function callPhone(){
+    if(profil) window.location.href = "tel:" + profil.telephone;
+  }
+  function mailPerson(){
+    if(profil) window.location.href = "mailto:" + profil.email;
+  }
+  function saveContact(){
+    if(!profil) return;
+    const vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "FN:" + profil.nom,
+      "TITLE:" + profil.fonction,
+      "ORG:" + entreprise,
+      "TEL;TYPE=CELL:" + profil.telephone,
+      "EMAIL:" + profil.email,
+      "ADR:;;" + profil.localisation,
+      "END:VCARD"
+    ].join("\n");
+    const blob = new Blob([vcard], { type: "text/vcard" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = profil.nom.replace(/\s+/g,"_") + ".vcf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "cedric-djohozin",
+    "nom": "Cédric Djohozin",
+    "fonction": "Technicien biomédical",
+    "service": "Maintenance biomédicale",
+    "telephone": "+22901XXXXXXXX",
+    "telephoneAffiche": "+229 01 XX XX XX XX",
+    "email": "c.djohozin@entreprise.com",
+    "localisation": "Cotonou, Bénin",
+    "photo": "photos/cedric-djohozin.jpg"
+  },
+  {
+    "id": "aicha-moumouni",
+    "nom": "Aïcha Moumouni",
+    "fonction": "Ingénieure biomédicale",
+    "service": "Radiologie",
+    "telephone": "+22902XXXXXXXX",
+    "telephoneAffiche": "+229 02 XX XX XX XX",
+    "email": "a.moumouni@entreprise.com",
+    "localisation": "Parakou, Bénin",
+    "photo": "photos/aicha-moumouni.jpg"
+  },
+  {
+    "id": "koffi-adande",
+    "nom": "Koffi Adandé",
+    "fonction": "Responsable maintenance",
+    "service": "Bloc opératoire",
+    "telephone": "+22903XXXXXXXX",
+    "telephoneAffiche": "+229 03 XX XX XX XX",
+    "email": "k.adande@entreprise.com",
+    "localisation": "Cotonou, Bénin",
+    "photo": ""
+  }
+]
