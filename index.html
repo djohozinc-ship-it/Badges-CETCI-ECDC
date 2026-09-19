@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annuaire — Nom de l'entreprise</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+  :root{--ink:#0F1114;--ink-2:#1B1E22;--brass:#B08D46;--brass-light:#E4D3A6;--paper:#F7F5F0;--card:#FFFFFF;--line:#E8E3D8;--text:#1D2024;--muted:#8A8377;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);font-family:'Inter',sans-serif;color:var(--text);}
+  a{text-decoration:none;color:inherit;}
+  .header{background:linear-gradient(165deg,var(--ink),var(--ink-2));color:#fff;padding:36px 20px 30px;text-align:center;}
+  .header h1{font-family:'Fraunces',serif;font-weight:600;font-size:26px;margin:0 0 4px;}
+  .header p{font-size:12.5px;color:var(--brass-light);letter-spacing:.06em;margin:0;}
+  .search-wrap{max-width:640px;margin:-20px auto 0;padding:0 20px;}
+  .search{width:100%;padding:13px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card);box-shadow:0 8px 24px rgba(15,17,20,.1);font-size:14px;font-family:'Inter',sans-serif;}
+  .search:focus{outline:2px solid var(--brass);outline-offset:1px;}
+  .grid{max-width:640px;margin:26px auto 60px;padding:0 20px;display:grid;grid-template-columns:1fr;gap:12px;}
+  @media(min-width:520px){.grid{grid-template-columns:1fr 1fr;}}
+  .member{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;}
+  .avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(150deg,#232830,var(--ink));border:1.5px solid var(--brass);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;color:var(--brass-light);font-weight:600;font-size:15px;flex-shrink:0;background-size:cover;background-position:center;}
+  .m-name{font-size:14.5px;font-weight:600;}
+  .m-role{font-size:12px;color:var(--muted);margin-top:1px;}
+  .empty{text-align:center;color:var(--muted);font-size:13px;padding:40px 0;}
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Annuaire</h1>
+    <p>NOM DE L'ENTREPRISE</p>
+  </div>
+  <div class="search-wrap"><input class="search" id="search" placeholder="Rechercher un nom, un service..."></div>
+  <div class="grid" id="grid"></div>
+
+<script>
+  let membres = [];
+  function initiales(nom){ return nom.split(" ").map(m => m[0]).join("").slice(0,2).toUpperCase(); }
+
+  function rendre(liste){
+    const grid = document.getElementById("grid");
+    grid.innerHTML = "";
+    if(liste.length === 0){ grid.innerHTML = '<div class="empty">Aucun résultat.</div>'; return; }
+    liste.forEach(p => {
+      const a = document.createElement("a");
+      a.href = "profil-badge.html?id=" + encodeURIComponent(p.id);
+      a.className = "member";
+      const avatarStyle = p.photo ? `background-image:url('${p.photo}')` : "";
+      a.innerHTML = `
+        <div class="avatar" style="${avatarStyle}">${p.photo ? "" : initiales(p.nom)}</div>
+        <div><div class="m-name">${p.nom}</div><div class="m-role">${p.fonction} · ${p.service}</div></div>
+      `;
+      grid.appendChild(a);
+    });
+  }
+
+  fetch("profils.json").then(r => r.json()).then(data => {
+    membres = data;
+    rendre(membres);
+  }).catch(e => {
+    document.getElementById("grid").innerHTML = '<div class="empty">Impossible de charger l\'annuaire.</div>';
+    console.error(e);
+  });
+
+  document.getElementById("search").addEventListener("input", (e) => {
+    const q = e.target.value.toLowerCase();
+    rendre(membres.filter(p =>
+      p.nom.toLowerCase().includes(q) ||
+      p.service.toLowerCase().includes(q) ||
+      p.fonction.toLowerCase().includes(q)
+    ));
+  });
+</script>
+</body>
+</html>
