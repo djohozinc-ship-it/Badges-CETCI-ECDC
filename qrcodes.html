@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR codes — badges</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap');
+  :root{--ink:#0F1114;--brass:#B08D46;--paper:#F7F5F0;--card:#FFFFFF;--line:#E8E3D8;--text:#1D2024;--muted:#8A8377;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);font-family:'Inter',sans-serif;color:var(--text);padding:30px 20px 60px;}
+  .wrap{max-width:960px;margin:0 auto;}
+  h1{font-family:'Fraunces',serif;font-size:24px;margin:0 0 4px;}
+  .sub{font-size:13px;color:var(--muted);margin:0 0 20px;}
+  .toolbar{display:flex;gap:10px;margin-bottom:26px;}
+  .toolbar button{padding:11px 18px;border-radius:5px;border:1px solid var(--line);background:var(--card);font-size:13px;font-weight:500;cursor:pointer;}
+  .toolbar button.primary{background:var(--ink);color:var(--brass);border-color:var(--ink);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(200px,1fr));gap:16px;}
+  .badge{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;text-align:center;break-inside:avoid;}
+  .badge canvas, .badge img{margin:0 auto;}
+  .badge .nom{font-weight:600;font-size:13.5px;margin-top:10px;}
+  .badge .role{font-size:11.5px;color:var(--muted);margin-top:1px;}
+  .badge .dl{margin-top:10px;font-size:11px;border:1px solid var(--line);background:transparent;border-radius:4px;padding:6px 10px;cursor:pointer;}
+  @media print{
+    .toolbar, h1, .sub{display:none;}
+    body{padding:0;background:#fff;}
+    .grid{grid-template-columns:repeat(3, 1fr);}
+    .badge{border:1px dashed #ccc;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>QR codes des badges</h1>
+  <p class="sub">Un QR code par membre, généré depuis profils.json. Chaque QR pointe directement vers la fiche du membre.</p>
+  <div class="toolbar">
+    <button class="primary" onclick="window.print()">Imprimer tout</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<script>
+  const base = window.location.href.split("qrcodes.html")[0];
+
+  fetch("profils.json").then(r => r.json()).then(membres => {
+    const grid = document.getElementById("grid");
+    membres.forEach(p => {
+      const url = base + "profil-badge.html?id=" + encodeURIComponent(p.id);
+
+      const cell = document.createElement("div");
+      cell.className = "badge";
+      const qrHolder = document.createElement("div");
+      cell.appendChild(qrHolder);
+
+      const nom = document.createElement("div");
+      nom.className = "nom"; nom.textContent = p.nom;
+      const role = document.createElement("div");
+      role.className = "role"; role.textContent = p.fonction;
+      const dl = document.createElement("button");
+      dl.className = "dl"; dl.textContent = "Télécharger PNG";
+
+      cell.appendChild(nom);
+      cell.appendChild(role);
+      cell.appendChild(dl);
+      grid.appendChild(cell);
+
+      new QRCode(qrHolder, { text: url, width: 150, height: 150, colorDark: "#0F1114", colorLight: "#ffffff" });
+
+      dl.onclick = () => {
+        const canvas = qrHolder.querySelector("canvas");
+        const a = document.createElement("a");
+        a.href = canvas.toDataURL("image/png");
+        a.download = p.id + "-qr.png";
+        a.click();
+      };
+    });
+  }).catch(e => {
+    document.getElementById("grid").innerHTML = "Impossible de charger profils.json.";
+    console.error(e);
+  });
+</script>
+</body>
+</html>
