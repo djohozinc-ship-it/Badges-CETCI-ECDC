@@ -286,7 +286,8 @@
       }
       afficherProfil(profil);
     }catch(e){
-      afficherErreur("Impossible de charger les données. Vérifiez votre connexion.");
+      console.error("Erreur chargerProfil:", e);
+      afficherErreur("Erreur : " + e.message);
     }
   }
 
