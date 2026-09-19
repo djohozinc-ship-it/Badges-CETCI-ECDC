@@ -382,5 +382,21 @@
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
     "photo": "photos/evodie.png"
+  },
+  {
+    "id": "kokpo-sunday",
+    "nom": "KPOKPO Sunday",
+    "fonction": "Ingénieur en Génie Electrique",
+    "matricule": "ECDC-SRQ-0005",
+    "service": "ROBOTIQUE",
+    "depuis": "2025",
+    "bio": "",
+    "competences": [],
+    "telephone": "+2290155994486",
+    "telephoneAffiche": "+2290155994486",
+    "email": "",
+    "localisation": "Abomey-Calavi, Bénin",
+    "linkedin": "",
+    "photo": "photos/sunday.png"
   }
 ]
