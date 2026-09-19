@@ -37,12 +37,12 @@
     "fonction": "Technicien Biomédical",
     "matricule": "ECDC-SBM-0005",
     "service": "BIOMÉDICAL",
-    "depuis": "2016",
+    "depuis": "2024",
     "bio": "Supervise les équipes techniques et la continuité de service des salles d'opération.",
     "competences": [""],
     "telephone": "+2290141803459",
     "telephoneAffiche": "+229 01 41 80 34 59",
-    "email": "k..com",
+    "email": "jesugojoelhounmenou@gmail.com",
     "localisation": "Dassa, Bénin",
     "linkedin": "https://www.linkedin.com/in/jesugo-joël-hounmenou-801407342/",
     "photo": "photos/joel.jpg"
@@ -74,7 +74,7 @@
     "competences": [],
     "telephone": "+2290143857896",
     "telephoneAffiche": "+2290143857896",
-    "email": "",
+    "email": "jeanzinsou56@gmail.com",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "https://www.linkedin.com/in/jean-zinsou-54624b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     "photo": "photos/jean.jpg"
@@ -122,7 +122,7 @@
     "competences": [],
     "telephone": "+2290142909095",
     "telephoneAffiche": "+2290142909095",
-    "email": "",
+    "email": "lawissadossousmiss@gmail.com",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "https://www.linkedin.com/in/smiss-lawissa-4a269a360?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     "photo": "photos/smiss.jpeg"
@@ -138,7 +138,7 @@
     "competences": [],
     "telephone": "+2290158256684",
     "telephoneAffiche": "+2290158256684",
-    "email": "",
+    "email": "smithhounyo@gmail.com",
     "localisation": "Cotonou, Bénin",
     "linkedin": "",
     "photo": "photos/caleb.jpeg"
@@ -154,7 +154,7 @@
     "competences": [],
     "telephone": "+2290167507301",
     "telephoneAffiche": "+2290167507301",
-    "email": "",
+    "email": "landryboko18@gmail.com",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
     "photo": "photos/landry.jpeg"
@@ -170,14 +170,14 @@
     "competences": [],
     "telephone": "+2290153303658",
     "telephoneAffiche": "+2290153303658",
-    "email": "",
+    "email": "princessemellya179@gmail.com",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
     "photo": "photos/divine.jpeg"
   },
   {
     "id": "adogblanon-enock",
-    "nom": "ADOGBLANON Enock Dossou",
+    "nom": "ADOGBLANON Dossou Enock",
     "fonction": "Technicien Biomédical",
     "matricule": "ECDC-SBM-0007",
     "service": "BIOMÉDICAL",
@@ -186,7 +186,7 @@
     "competences": [],
     "telephone": "+2290146000282",
     "telephoneAffiche": "+2290146000282",
-    "email": "",
+    "email": "enockadogblanon@gmail.com",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "https://www.linkedin.com/in/enock-adogblanon-a00b35427?trk=contact-info",
     "photo": "photos/enock.jpeg"
@@ -322,7 +322,7 @@
   {
     "id": "tossou-mélaine",
     "nom": "TOSSOU Sèyidè Mélaine",
-    "fonction": "Ingénieure en Génie Mécanique et Energétique",
+    "fonction": "Ingénieure en Génie Mécanique et Energétique option Productique",
     "matricule": "ECDC-SRQ-0002",
     "service": "ROBOTIQUE",
     "depuis": "2024",
@@ -330,7 +330,7 @@
     "competences": [],
     "telephone": "+2290169321002",
     "telephoneAffiche": "+2290169321002",
-    "email": "",
+    "email": "seyidemelainetossou@gmail.com",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "https://www.linkedin.com/in/sèyidè-mélaine-tossou-72a022297?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     "photo": "photos/melaine.jpg"
@@ -346,7 +346,7 @@
     "competences": [],
     "telephone": "+2290190237379",
     "telephoneAffiche": "+2290190237379",
-    "email": "",
+    "email": "okedonald790@gmail.com",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
     "photo": "photos/donald.jpg"
@@ -369,7 +369,7 @@
   },
   {
     "id": "kpodegbe-evodie",
-    "nom": "KPODEGBE Évodie",
+    "nom": "KPODEGBE Sèna Evodie",
     "fonction": "Ingénieure en Génie Electrique",
     "matricule": "ECDC-SRQ-0004",
     "service": "ROBOTIQUE",
@@ -378,7 +378,7 @@
     "competences": [],
     "telephone": "+2290157518914",
     "telephoneAffiche": "+2290157518914",
-    "email": "",
+    "email": "evodiekpodegbe@gmail.com",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
     "photo": "photos/evodie.jpg"
