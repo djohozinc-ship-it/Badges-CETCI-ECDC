@@ -1,18 +1,18 @@
 [
   {
     "id": "cedric-djohozin",
-    "nom": "Cédric Djohozin",
+    "nom": "Cédric DJOHOZIN",
     "fonction": "Technicien biomédical",
     "matricule": "BME-0142",
-    "service": "Maintenance biomédicale",
-    "depuis": "2022",
-    "bio": "Spécialisé dans la maintenance des équipements de dialyse et des systèmes de traitement d'eau médicale.",
-    "competences": ["Maintenance dialyse", "Osmose inverse", "Électronique médicale"],
-    "telephone": "+22901XXXXXXXX",
-    "telephoneAffiche": "+229 01 XX XX XX XX",
-    "email": "c.djohozin@entreprise.com",
+    "service": "Biomédical",
+    "depuis": "2024",
+    "bio": "I'm not a genius that is why, I will work all the time.",
+    "competences": ["Systèmes biomédicaux intelligent", " Biorobotique", "Technologies embarquées"],
+    "telephone": "+2290164834924",
+    "telephoneAffiche": "+229 01 64 83 49 24",
+    "email": "djohozinc@gmail.com",
     "localisation": "Cotonou, Bénin",
-    "linkedin": "",
+    "linkedin": "www.linkedin.com/in/concepteurdemaintenance",
     "photo": "photos/cedric-djohozin.jpg"
   },
   {
