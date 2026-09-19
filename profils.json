@@ -46,5 +46,21 @@
     "localisation": "Dassa, Bénin",
     "linkedin": "",
     "photo": "photos/joel.jpg"
+  },
+  {
+    "id": "amoussou-junio",
+    "nom": "AMOUSSOU Bimibola Junior",
+    "fonction": "Ingénieur Génie Civil",
+    "matricule": "ECDC-SGC-0003",
+    "service": "GÉNIE CIVIL",
+    "depuis": "2025",
+    "bio": "",
+    "competences": [],
+    "telephone": "+2290146631413",
+    "telephoneAffiche": "+2290146631413",
+    "email": "",
+    "localisation": "Abomey-Calavi, Bénin",
+    "linkedin": "",
+    "photo": "photos/junior.png"
   }
 ]
