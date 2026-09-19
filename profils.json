@@ -349,7 +349,7 @@
     "email": "",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
-    "photo": "photos/donald.png"
+    "photo": "photos/donald.jpg"
   },
   {
     "id": "egoudjobi-peace",
@@ -365,7 +365,7 @@
     "email": "",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
-    "photo": "photos/peace.png"
+    "photo": "photos/peace.jpg"
   },
   {
     "id": "kpodegbe-evodie",
@@ -381,7 +381,7 @@
     "email": "",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
-    "photo": "photos/evodie.png"
+    "photo": "photos/evodie.jpg"
   },
   {
     "id": "kokpo-sunday",
@@ -397,6 +397,6 @@
     "email": "",
     "localisation": "Abomey-Calavi, Bénin",
     "linkedin": "",
-    "photo": "photos/sunday.png"
+    "photo": "photos/sunday.jpg"
   }
 ]
